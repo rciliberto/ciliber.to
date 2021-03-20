@@ -9,8 +9,8 @@ pipeline {
 
     stages {
         stage('Get Project Version') {
-            projectVersion = sh(returnStdout:true, script:'mvn help:evaluate -Dexpression=jgitver.calculated_version -q -DforceStdout')
             steps {
+                projectVersion = sh(returnStdout:true, script:'mvn help:evaluate -Dexpression=jgitver.calculated_version -q -DforceStdout')
                 echo projectVersion
             }
         }
