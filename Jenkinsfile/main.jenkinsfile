@@ -21,6 +21,17 @@ pipeline {
                 sh "docker build -t ciliberto/website:${projectVersion} ."
             }
         }
+        stage('Tag Image As Latest') {
+            steps {
+                script {
+                    if (projectVersion.contains("-")) {
+                        echo "Development version ${projectVersion} detected. Not tagging latest."
+                    } else {
+                        sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest"
+                    }
+                }
+            }
+        }
     }
     post {
         success {
