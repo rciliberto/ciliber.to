@@ -9,14 +9,14 @@ pipeline {
 
     stages {
         stage('Get Project Version') {
+            projectVersion = sh(returnStdout:true, script:'mvn help:evaluate -Dexpression=jgitver.calculated_version -q -DforceStdout')
             steps {
-                projectVersion = sh(returnStdout:true, script:'mvn help:evaluate -Dexpression=jgitver.calculated_version -q -DforceStdout')
+                echo projectVersion
             }
         }
         stage('Build Container') {
             steps {
                 sh "docker build -t ciliberto/website:${projectVersion} ."
-                sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest"
             }
         }
     }
