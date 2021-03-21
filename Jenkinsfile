@@ -41,6 +41,12 @@ pipeline {
                 }
             }
         }
+        stage('Remove Local Tags') {
+            steps {
+                sh "docker image rm ciliberto/website:latest"
+                sh "docker image rm ciliberto/website:${projectVersion}"
+            }
+        }
     }
     post {
         success {
