@@ -41,13 +41,6 @@ pipeline {
                 }
             }
         }
-//         stage('Remove Local Images') {
-//             steps {
-//                 script {
-//                     sh "docker image prune"
-//                 }
-//             }
-//         }
     }
     post {
         success {
