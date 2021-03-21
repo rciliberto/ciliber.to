@@ -1,4 +1,4 @@
-def projectVersion;
+def projectVersion
 
 pipeline {
     agent any
