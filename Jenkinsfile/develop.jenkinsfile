@@ -31,10 +31,13 @@ pipeline {
         stage('Push to Local Registry') {
             steps {
                 script {
-                    sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:${projectVersion}"
-                    sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:latest"
-                    sh "docker push docker.ciliber.to/ciliberto/website:${projectVersion}"
-                    sh "docker push docker.ciliber.to/ciliberto/website:latest"
+                    withCredentials([usernamePassword(credentialsId: 'docker-registry', passwordVariable: 'password', usernameVariable: 'username')]) {
+                        sh "docker login docker.ciliber.to --username ${username} --password ${password}"
+                        sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:${projectVersion}"
+                        sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:latest"
+                        sh "docker push docker.ciliber.to/ciliberto/website:${projectVersion}"
+                        sh "docker push docker.ciliber.to/ciliberto/website:latest"
+                    }
                 }
             }
         }
