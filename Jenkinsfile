@@ -26,7 +26,7 @@ pipeline {
         stage('Verify Develop not at Main') {
             when {
                 expression {
-                    getGitDevelopRev() != getGitMainRev() || getGitBranchName() == '*/main'
+                    !getGitDevelopRev().equals(getGitMainRev()) || getGitBranchName() == '*/main'
                 }
             }
             stages {
