@@ -28,6 +28,7 @@ pipeline {
                 script {
                     if (getGitDevelopRev() != getGitMainRev() || getGitBranchName() != '*/main') {
                         currentBuild.result = "UNSTABLE"
+                        return
                     }
                 }
             }
