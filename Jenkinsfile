@@ -45,6 +45,11 @@ pipeline {
                         sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:latest"
                         sh "docker push docker.ciliber.to/ciliberto/website:${projectVersion}"
                         sh "docker push docker.ciliber.to/ciliberto/website:latest"
+
+                        if (getGitBranchName() == '*/main') {
+                            sh "docker tag ciliberto/website:${projectVersion} docker.ciliber.to/ciliberto/website:latest-stable"
+                            sh "docker push docker.ciliber.to/ciliberto/website:latest-stable"
+                        }
                     }
                 }
             }
@@ -53,6 +58,9 @@ pipeline {
             steps {
                 sh "docker image rm ciliberto/website:latest"
                 sh "docker image rm ciliberto/website:${projectVersion}"
+                if (getGitBranchName() == '*/main') {
+                    sh "docker image rm ciliberto/website:latest-stable"
+                }
             }
         }
     }
