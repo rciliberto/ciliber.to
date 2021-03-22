@@ -2,17 +2,17 @@ def projectVersion
 
 def getGitBranchName() {
     def branch = scm.branches[0].name
-    echo branch
+    return branch
 }
 
 def getGitMainRev() {
     def main = sh(returnStdout:true, script:'git rev-parse origin/main')
-    echo main
+    return main
 }
 
 def getGitDevelopRev() {
     def dev = sh(returnStdout:true, script:'git rev-parse origin/develop')
-    echo dev
+    return dev
 }
 
 pipeline {
@@ -26,7 +26,7 @@ pipeline {
         stage('Verify Develop not at Main') {
             when {
                 expression {
-                    !getGitDevelopRev().equals(getGitMainRev()) || getGitBranchName() == '*/main'
+                    !getGitDevelopRev().equals(getGitMainRev()) || getGitBranchName().equals('*/main')
                 }
             }
             stages {
