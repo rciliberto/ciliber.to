@@ -30,9 +30,7 @@ pipeline {
                 script {
                     sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest"
 
-                    def currentBranch = getGitBranchName()
-                    echo currentBranch
-                    if (currentBranch == 'main') {
+                    if (getGitBranchName() == '*/main') {
                         sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest-stable"
                     }
                 }
