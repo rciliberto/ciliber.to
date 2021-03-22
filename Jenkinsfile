@@ -56,10 +56,12 @@ pipeline {
         }
         stage('Remove Local Tags') {
             steps {
-                sh "docker image rm ciliberto/website:latest"
-                sh "docker image rm ciliberto/website:${projectVersion}"
-                if (getGitBranchName() == '*/main') {
-                    sh "docker image rm ciliberto/website:latest-stable"
+                script {
+                    sh "docker image rm ciliberto/website:latest"
+                    sh "docker image rm ciliberto/website:${projectVersion}"
+                    if (getGitBranchName() == '*/main') {
+                        sh "docker image rm ciliberto/website:latest-stable"
+                    }
                 }
             }
         }
