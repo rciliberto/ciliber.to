@@ -1,4 +1,8 @@
-def projectVersion;
+def projectVersion
+
+def getGitBranchName() {
+    return scm.branches[0].name
+}
 
 pipeline {
     agent any
@@ -25,6 +29,10 @@ pipeline {
             steps {
                 script {
                     sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest"
+
+                    if (getGitBranchName() == '*/main') {
+                        sh "docker tag ciliberto/website:${projectVersion} ciliberto/website:latest-stable"
+                    }
                 }
             }
         }
