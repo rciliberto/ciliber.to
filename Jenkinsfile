@@ -27,8 +27,8 @@ pipeline {
             steps {
                 script {
                     if (getGitDevelopRev() != getGitMainRev() || getGitBranchName() != '*/main') {
-                        currentBuild.result = "UNSTABLE"
-                        return
+                        currentBuild.getRawBuild().getExecutor().interrupt(Result.UNSTABLE)
+                        sleep(1)
                     }
                 }
             }
