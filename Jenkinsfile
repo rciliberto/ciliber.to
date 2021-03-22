@@ -26,7 +26,7 @@ pipeline {
         stage('Verify Develop not at Main') {
             steps {
                 script {
-                    if (getGitDevelopRev() != getGitMainRev() || getGitBranchName() != '*/main') {
+                    if (getGitDevelopRev() == getGitMainRev() && getGitBranchName() != '*/main') {
                         currentBuild.getRawBuild().getExecutor().interrupt(Result.UNSTABLE)
                         sleep(1)
                     }
@@ -85,11 +85,6 @@ pipeline {
                     }
                 }
             }
-        }
-    }
-    post {
-        success {
-            echo "Build suceeded: ciliberto/website:${projectVersion}"
         }
     }
 }
