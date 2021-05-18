@@ -4,12 +4,12 @@
   </div>
 </template>
 
-<script>
-export default {
-  name: "Resume"
-}
+<script lang="ts">
+import { defineComponent } from "vue";
+
+export default defineComponent({
+  name: "Resume",
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

@@ -5,15 +5,14 @@
   </div>
 </template>
 
-<script>
-import Project from "@/components/Project";
+<script lang="ts">
+import { defineComponent } from "vue";
+import Project from "@/components/Project.vue";
 
-export default {
+export default defineComponent({
   name: "Projects",
   components: { Project },
-}
+});
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>
