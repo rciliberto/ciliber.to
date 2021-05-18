@@ -1,8 +1,9 @@
 <template>
-  <h1>{{ name }}</h1>
-  <h2>{{ description }}</h2>
-  <img src="{{ imagePath }}" alt="{{ name }}">
-
+  <div>
+    <h1>{{ name }}</h1>
+    <img :src="imagePath" :alt="name">
+    <h4>{{ description }}</h4>
+  </div>
 </template>
 
 <script>
