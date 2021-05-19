@@ -1,3 +1,7 @@
+<!--
+  - Copyright (c) 2021. Robert Ciliberto
+  -->
+
 <template>
   <div class="projects">
     <h1>Projects</h1>

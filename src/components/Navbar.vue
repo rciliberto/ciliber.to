@@ -1,3 +1,7 @@
+<!--
+  - Copyright (c) 2021. Robert Ciliberto
+  -->
+
 <template>
   <div id="navbar">
     <ul>

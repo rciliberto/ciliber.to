@@ -1,3 +1,7 @@
+<!--
+  - Copyright (c) 2021. Robert Ciliberto
+  -->
+
 <template>
   <div>
     <h1>{{ name }}</h1>
