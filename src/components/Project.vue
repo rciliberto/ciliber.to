@@ -4,9 +4,9 @@
 
 <template>
   <div>
-    <h1>{{ name }}</h1>
+    <h2>{{ name }}</h2>
     <img :src="imagePath" :alt="name" />
-    <h4>{{ description }}</h4>
+    <p>{{ description }}</p>
   </div>
 </template>
 

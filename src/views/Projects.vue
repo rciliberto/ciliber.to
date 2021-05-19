@@ -5,7 +5,11 @@
 <template>
   <div class="projects">
     <h1>Projects</h1>
-    <Project name="Ciliber.to Website" description="This website!"></Project>
+    <Project
+      name="Ciliber.to Website"
+      description="This website!"
+      imagePath="../assets/horns.png"
+    ></Project>
   </div>
 </template>
 
