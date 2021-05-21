@@ -5,19 +5,42 @@
 <template>
   <div class="projects">
     <h1>Projects</h1>
-    <Project
-      name="Ciliber.to Website"
-      description="This website!"
-      imagePath="../assets/horns.png"
-    ></Project>
+    <div
+      class="project-cards"
+      v-for="project in projectData"
+      :key="project.name"
+    >
+      <project
+        :name="project.name"
+        :description="project.description"
+        :image_src="project.image_src"
+        :image_alt="project.image_alt"
+        :site-link="project.siteLink"
+      />
+    </div>
   </div>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
-import Project from "@/components/Project.vue";
+import Project, { ProjectProps } from "@/components/Project.vue";
+
+import ciliberto_website from "@/assets/img/ciliberto_website.png";
 
 export default defineComponent({
+  data() {
+    return {
+      projectData: [
+        {
+          name: "Ciliber.to Website",
+          description: "This website!",
+          image_src: ciliberto_website,
+          image_alt: "Ciliber.to Website",
+          siteLink: "https://google.com/",
+        } as ProjectProps,
+      ],
+    };
+  },
   name: "Projects",
   components: { Project },
 });
