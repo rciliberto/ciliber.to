@@ -15,7 +15,7 @@
         :description="project.description"
         :image_src="project.image_src"
         :image_alt="project.image_alt"
-        :site-link="project.siteLink"
+        :site-link="project.site_link"
       />
     </div>
   </div>
@@ -36,7 +36,28 @@ export default defineComponent({
           description: "This website!",
           image_src: ciliberto_website,
           image_alt: "Ciliber.to Website",
-          siteLink: "https://google.com/",
+          site_link: "https://google.com/",
+        } as ProjectProps,
+        {
+          name: "Ciliber.to Website",
+          description: "This website!",
+          image_src: ciliberto_website,
+          image_alt: "Ciliber.to Website",
+          site_link: "https://google.com/",
+        } as ProjectProps,
+        {
+          name: "Ciliber.to Website",
+          description: "This website!",
+          image_src: ciliberto_website,
+          image_alt: "Ciliber.to Website",
+          site_link: "https://google.com/",
+        } as ProjectProps,
+        {
+          name: "Ciliber.to Website",
+          description: "This website!",
+          image_src: ciliberto_website,
+          image_alt: "Ciliber.to Website",
+          site_link: "https://google.com/",
         } as ProjectProps,
       ],
     };

@@ -3,7 +3,7 @@
   -->
 
 <template>
-  <div class="project" @click="onProjectClick">
+  <div class="container" @click="onProjectClick">
     <h2>{{ name }}</h2>
     <img :src="image_src" :alt="image_alt" />
     <p>{{ description }}</p>
@@ -18,38 +18,46 @@ export interface ProjectProps {
   description: string;
   image_src: string;
   image_alt: string;
-  siteLink: string;
+  site_link: string;
 }
 
 export default defineComponent({
   name: "Project",
   methods: {
-    onProjectClick: () => {
-      window.open("");
+    onProjectClick() {
+      console.log(this.site_link);
+      window.open(this.site_link);
     },
   },
   props: {
     name: String,
     description: String,
-    image_src: Image,
+    image_src: String,
     image_alt: String,
-    siteLink: String,
+    site_link: String,
   },
 });
 </script>
 
 <style scoped>
-.project {
+.container {
   background-color: #333333;
-  width: 20%;
-  margin: 10px 10px;
-  border: 4px #888888 solid;
+  width: 23%;
+  margin: 1%;
   float: left;
+  padding-left: 1%;
+  padding-right: 1%;
+  box-sizing: border-box;
+  border: 4px #888888 solid;
   border-radius: 20px;
 }
 
-.project:hover {
+.container:hover {
   cursor: pointer;
   background-color: #222222;
+}
+
+img {
+  width: 100%;
 }
 </style>
