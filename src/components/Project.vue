@@ -3,7 +3,11 @@
   -->
 
 <template>
-  <div class="container" @click="onProjectClick">
+  <div
+    class="container"
+    @click="onProjectClick"
+    :style="`cursor:${site_link === undefined ? 'inherit' : 'pointer'}`"
+  >
     <h2>{{ name }}</h2>
     <img :src="image_src" :alt="image_alt" />
     <p>{{ description }}</p>
@@ -18,15 +22,14 @@ export interface ProjectProps {
   description: string;
   image_src: string;
   image_alt: string;
-  site_link: string;
+  site_link?: string;
 }
 
 export default defineComponent({
   name: "Project",
   methods: {
     onProjectClick() {
-      console.log(this.site_link);
-      window.open(this.site_link);
+      if (this.site_link != undefined) window.open(this.site_link);
     },
   },
   props: {
@@ -34,7 +37,10 @@ export default defineComponent({
     description: String,
     image_src: String,
     image_alt: String,
-    site_link: String,
+    site_link: {
+      type: String,
+      default: undefined,
+    },
   },
 });
 </script>
