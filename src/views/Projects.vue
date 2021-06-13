@@ -34,46 +34,35 @@ export default defineComponent({
       projectData: [
         {
           name: "Ciliber.to Website",
-          description: "This website!",
+          description:
+            "This website! Built using only Vue 3 with TypeScript. I started this project on the side to exercise and practice web development. It also serves as a great place to showcase what I am working on currently.",
           image_src: ciliberto_website,
           image_alt: "Ciliber.to Website",
-          site_link: "https://google.com/",
+          site_link: "https://github.com/rciliberto/ciliber.to",
         } as ProjectProps,
         {
           name: "Home Server",
-          description: "Home Server ",
+          description:
+            "I bought a used Dell R820 server to self host all my projects. It runs Debian with Proxmox virtualization and I have virtual machines for various purposes such as PfSense gateway firewall, NGNIX reverse proxy, Jenkins CI/CD, Docker applications, and Home Assistant home automation among others.",
           image_src: home_server,
-          image_alt: "Home Server Dashboard",
+          image_alt: "Picture of Robby with the server",
           site_link: undefined,
         } as ProjectProps,
         {
-          name: "Ciliber.to Website",
-          description: "This website!",
-          image_src: ciliberto_website,
-          image_alt: "Ciliber.to Website",
-          site_link: "https://google.com/",
-        } as ProjectProps,
-        {
-          name: "Ciliber.to Website",
+          name: "Blabber Generator",
           description:
-            'Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections 1.10.32 and 1.10.33 of "de Finibus Bonorum et Malorum" (The Extremes of Good and Evil) by Cicero, written in 45 BC. This book is a treatise on the theory of ethics, very popular during the Renaissance. The first line of Lorem Ipsum, "Lorem ipsum dolor sit amet..", comes from a line in section 1.10.32.',
-          image_src: ciliberto_website,
-          image_alt: "Ciliber.to Website",
-          site_link: "https://google.com/",
+            'My fiancée was making a short film for her film class and required gibberish voices for the characters in it. Rather than pull some audio clips off of the internet I decided to help her by creating a generator that can create similar voices to those seen in the video game "Animal Crossing." the voices implemented in the generator are made by making a sped up recording for how each letter of the alphabet sounds. This is combined for each letter in a sentence to create gibberish that sounds kind of like the inputted sentence.',
+          image_src: "",
+          image_alt: "GUI for Blabber Generator",
+          site_link: "https://github.com/rciliberto/Blabber-Generator",
         } as ProjectProps,
         {
-          name: "Ciliber.to Website",
-          description: "This website!",
-          image_src: ciliberto_website,
-          image_alt: "Ciliber.to Website",
-          site_link: "https://google.com/",
-        } as ProjectProps,
-        {
-          name: "Ciliber.to Website",
-          description: "This website!",
-          image_src: ciliberto_website,
-          image_alt: "Ciliber.to Website",
-          site_link: "https://google.com/",
+          name: "WikiWhere",
+          description:
+            "A project me and my friends came up with at HackHarvard 2019. It visualizes the shortest path from one Wikipedia page to another when navigating only by links to other pages in the content of each page.",
+          image_src: "",
+          image_alt: "Wikiwhere website",
+          site_link: "https://github.com/wikiwhere/wikiwhere",
         } as ProjectProps,
       ],
     };
