@@ -1,11 +1,11 @@
 .DS_Store
 node_modules
-/dist
-
-
-# local env files
-.env.local
-.env.*.local
+/build
+/.svelte-kit
+/package
+.env
+.env.*
+!.env.example
 
 # Log files
 npm-debug.log*

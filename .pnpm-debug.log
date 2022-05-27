@@ -1,0 +1,15 @@
+{
+  "0 debug pnpm:scope": {
+    "selected": 1
+  },
+  "1 error pnpm": {
+    "code": "ERR_PNPM_INIT_ARG",
+    "hint": "Maybe you wanted to run \"pnpm create svelte my-app\"",
+    "err": {
+      "name": "pnpm",
+      "message": "init command does not accept any arguments",
+      "code": "ERR_PNPM_INIT_ARG",
+      "stack": "pnpm: init command does not accept any arguments\n    at Object.handler [as init] (/Users/robert/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.0/node_modules/pnpm/dist/pnpm.cjs:173925:15)\n    at /Users/robert/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.0/node_modules/pnpm/dist/pnpm.cjs:176439:51\n    at async run (/Users/robert/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.0/node_modules/pnpm/dist/pnpm.cjs:176415:34)\n    at async runPnpm (/Users/robert/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.0/node_modules/pnpm/dist/pnpm.cjs:176633:5)\n    at async /Users/robert/pnpm-global/5/node_modules/.pnpm/pnpm@7.1.0/node_modules/pnpm/dist/pnpm.cjs:176625:7"
+    }
+  }
+}
